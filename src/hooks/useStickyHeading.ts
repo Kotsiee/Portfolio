@@ -8,7 +8,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function useStickyHeading(
-  headingRef: React.RefObject<HTMLElement>,
+  headingRef: React.RefObject<HTMLHeadingElement | null>,
   sections: { id: string; label: string }[],
 ) {
   useEffect(() => {
