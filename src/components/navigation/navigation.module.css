@@ -1,0 +1,79 @@
+/* styles/navigation.module.css */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    z-index: 1000;
+    background: transparent;
+}
+
+/* LEFT SIDE */
+.navleft {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* RIGHT SIDE */
+.navright {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* MENU TOGGLE BUTTON */
+.menubox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.menubox:hover svg {
+    stroke: #fff;
+    filter: url(#glow);
+}
+
+.menubox svg {
+    height: 40px;
+    width: 40px;
+    stroke: #aaa;
+    stroke-width: 4 !important;
+}
+
+/* MENU LIST */
+.menuList {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+/* Blur background items when hovering one */
+.menuList:has(li:hover) li {
+    filter: blur(2px);
+}
+
+.menuList li {
+    opacity: 0;
+    font-size: 1.25rem;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+/* Hover effect on individual links */
+.menuList li:hover {
+    text-shadow: 0 0 10px #fff;
+    filter: none !important;
+}

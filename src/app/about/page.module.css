@@ -1,0 +1,62 @@
+.scene {
+    position: relative;
+    max-width: 100vw;
+}
+
+/* Hero area */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.introContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+/* Content container */
+.contentWrapper {
+    position: relative;
+    margin: 0 5vw;
+}
+
+/* Inside article */
+.content {
+    position: relative;
+    margin-left: 15rem;
+    width: 80vw;
+    padding: 4rem;
+}
+
+/* "View Projects" section in 'why' block */
+.viewProjects {
+    height: 10rem;
+    padding-top: 8rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Social icons */
+.sociallink {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+.email * {
+    stroke: #fff;
+}
+
+.github *,
+.linkedin * {
+    fill: #fff;
+}

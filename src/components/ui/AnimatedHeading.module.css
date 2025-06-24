@@ -1,0 +1,8 @@
+.animatedHeading {
+    font-size: 6rem;
+    font-weight: 600;
+    z-index: 20;
+    background: transparent;
+    pointer-events: none;
+    will-change: transform;
+}

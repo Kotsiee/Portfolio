@@ -1,0 +1,49 @@
+.projectItem {
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    margin-bottom: 2rem;
+    padding: 4rem 1rem;
+    border-bottom: 2px solid #fff;
+    user-select: none;
+    cursor: pointer;
+}
+
+.projectHeader {}
+
+.projectTitle {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.projectType {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #ccc;
+}
+
+.projectDates {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ccc;
+}
+
+.projectDescriptionContainer {
+    position: relative;
+    font-size: 1.25rem;
+}
+
+.projectDescription {
+    margin-bottom: 2rem;
+}
+
+.projectTechStack {
+    position: absolute;
+    bottom: 0;
+    font-size: 1rem;
+}
+
+.projectTechStackName {
+    font-weight: 600;
+    line-height: 2rem;
+}
