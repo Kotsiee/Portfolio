@@ -6,7 +6,7 @@ import AnimatedHeading from '@/components/ui/AnimatedHeading';
 import LiveClock from '@/components/ui/LiveClock';
 import AsideNav from '@/components/navigation/AsideNav';
 import Ball from '@/components/r3f/ball';
-import LeftChevron from '@/assets/SVG/leftChevron.svg';
+import LeftChevron from '@/assets/SVG/LeftChevron.svg';
 import Email from '@/assets/SVG/Email.svg';
 import Github from '@/assets/SVG/Github.svg';
 import LinkedIn from '@/assets/SVG/LinkedIn.svg';
