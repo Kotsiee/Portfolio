@@ -1,5 +1,22 @@
 // /data/projects.ts
 
+export interface IProjects {
+  slug: string;
+  title: string;
+  type: string;
+  dates: string;
+  status: string;
+  description: string;
+  techStack: string[];
+  image: string;
+  overview: string;
+  motivation: string;
+  process: { step: string; evidence: string; image: string[] }[];
+  showcase: { image: string; link: string }[];
+  features: string[];
+  future: string[];
+}
+
 export const projects = [
   {
     slug: 'skillup',
@@ -53,17 +70,17 @@ export const projects = [
     ],
 
     showcase: [
-      { image: 'https://i.imgur.com/yourDashboardImage.png', link: 'https://your-live-demo.com' },
+      { image: '/env/nx.png', link: 'https://your-live-demo.com' },
       {
-        image: 'https://i.imgur.com/yourFigmaImage.png',
+        image: '/env/nx.png',
         link: 'https://www.figma.com/file/yourFileLink',
       },
       {
-        image: 'https://i.imgur.com/yourPDFPreview.png',
+        image: '/env/nx.png',
         link: '/documents/skillup-final-report.pdf',
       },
       {
-        image: 'https://i.imgur.com/yourGitHubImage.png',
+        image: '/env/nx.png',
         link: 'https://github.com/yourusername/skillup',
       },
     ],
@@ -84,63 +101,63 @@ export const projects = [
       'Exploration feed powered by vector matching and engagement data',
     ],
   },
-  {
-    slug: 'just-for-kicks',
-    title: 'Just For Kicks',
-    type: 'Mobile Game',
-    dates: 'Jun 2023 - Jan 2024',
-    status: 'Completed',
-    description: 'A mobile game featuring "popular" sneakers and a ball to kick around',
-    techStack: ['C#', 'GLSL', 'Unity', 'Firebase', 'Blender', 'Adobe Illustrator'],
-    image:
-      'https://images.unsplash.com/photo-1745233775044-40e16ba3d9e2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    slug: 'downfall',
-    title: 'Downfall',
-    type: 'Mobile Game',
-    dates: 'Jun 2020 - Jan 2021',
-    status: 'Completed',
-    description: 'A simple mobile game platformer',
-    techStack: ['C#', 'Unity', 'Adobe Illustrator'],
-    image:
-      'https://images.unsplash.com/photo-1744123101974-b43c01979548?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    slug: 'website-designer',
-    title: 'Website Designer',
-    type: 'Web Development',
-    dates: 'Present',
-    status: 'Future Project',
-    description: 'Lift my skills as a creative genius and become the ultimate UI / UX Designer',
-    techStack: ['TypeScript', 'NextJS', 'NodeJS', 'Vercel', 'Figma'],
-    image:
-      'https://images.unsplash.com/photo-1750101272034-7becde7454dd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    overview:
-      'A merit-based collaboration platform designed for students, freelancers, and early-career professionals to build public portfolios through real-world projects. Users contribute to tasks without needing to apply, get reviewed by peers and clients, and are ranked transparently on a live leaderboard.',
-    motivation:
-      'Breaking into competitive industries without experience is brutal. Traditional hiring filters people by CVs and networks, not skills. This project flips that: giving newcomers a way to prove themselves through actual work, and giving startups access to talent without hiring overheads.',
-  },
-  {
-    slug: 'second-scent',
-    title: 'Second Scent',
-    type: 'Business',
-    dates: 'Jan 2026',
-    status: 'Future Project',
-    description: 'Scent Discovery Re-imagined',
-    techStack: ['C#', 'ASP.NET', 'AWS', 'Figma', 'Adobe Illustrator'],
-    image:
-      'https://images.unsplash.com/photo-1745233775044-40e16ba3d9e2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    slug: 'minecraft-rust',
-    title: 'Minecraft Rust',
-    type: 'Video Game',
-    dates: 'Nov 2025',
-    status: 'Future Project',
-    description: 'A full remake of Minecraft made with rust to optimise performance',
-    techStack: ['Rust'],
-    image:
-      'https://images.unsplash.com/photo-1744123101974-b43c01979548?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
+  // {
+  //   slug: 'just-for-kicks',
+  //   title: 'Just For Kicks',
+  //   type: 'Mobile Game',
+  //   dates: 'Jun 2023 - Jan 2024',
+  //   status: 'Completed',
+  //   description: 'A mobile game featuring "popular" sneakers and a ball to kick around',
+  //   techStack: ['C#', 'GLSL', 'Unity', 'Firebase', 'Blender', 'Adobe Illustrator'],
+  //   image:
+  //     'https://images.unsplash.com/photo-1745233775044-40e16ba3d9e2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  // },
+  // {
+  //   slug: 'downfall',
+  //   title: 'Downfall',
+  //   type: 'Mobile Game',
+  //   dates: 'Jun 2020 - Jan 2021',
+  //   status: 'Completed',
+  //   description: 'A simple mobile game platformer',
+  //   techStack: ['C#', 'Unity', 'Adobe Illustrator'],
+  //   image:
+  //     'https://images.unsplash.com/photo-1744123101974-b43c01979548?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  // },
+  // {
+  //   slug: 'website-designer',
+  //   title: 'Website Designer',
+  //   type: 'Web Development',
+  //   dates: 'Present',
+  //   status: 'Future Project',
+  //   description: 'Lift my skills as a creative genius and become the ultimate UI / UX Designer',
+  //   techStack: ['TypeScript', 'NextJS', 'NodeJS', 'Vercel', 'Figma'],
+  //   image:
+  //     'https://images.unsplash.com/photo-1750101272034-7becde7454dd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  //   overview:
+  //     'A merit-based collaboration platform designed for students, freelancers, and early-career professionals to build public portfolios through real-world projects. Users contribute to tasks without needing to apply, get reviewed by peers and clients, and are ranked transparently on a live leaderboard.',
+  //   motivation:
+  //     'Breaking into competitive industries without experience is brutal. Traditional hiring filters people by CVs and networks, not skills. This project flips that: giving newcomers a way to prove themselves through actual work, and giving startups access to talent without hiring overheads.',
+  // },
+  // {
+  //   slug: 'second-scent',
+  //   title: 'Second Scent',
+  //   type: 'Business',
+  //   dates: 'Jan 2026',
+  //   status: 'Future Project',
+  //   description: 'Scent Discovery Re-imagined',
+  //   techStack: ['C#', 'ASP.NET', 'AWS', 'Figma', 'Adobe Illustrator'],
+  //   image:
+  //     'https://images.unsplash.com/photo-1745233775044-40e16ba3d9e2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  // },
+  // {
+  //   slug: 'minecraft-rust',
+  //   title: 'Minecraft Rust',
+  //   type: 'Video Game',
+  //   dates: 'Nov 2025',
+  //   status: 'Future Project',
+  //   description: 'A full remake of Minecraft made with rust to optimise performance',
+  //   techStack: ['Rust'],
+  //   image:
+  //     'https://images.unsplash.com/photo-1744123101974-b43c01979548?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  // },
 ];

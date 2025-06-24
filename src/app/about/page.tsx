@@ -17,6 +17,7 @@ import buttonStyles from '@/components/ui/AboutButton.module.css';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,13 +98,13 @@ export default function AboutPage() {
 
             <section id="who" className={sectionStyles.section} data-section="Who">
               <p className={sectionStyles.info}>
-                I’m a curious and driven computer science graduate, always learning and building. I
-                love solving problems, making cool digital stuff, and working with people who care
-                about what they’re doing. Outside of tech, I enjoy finding joy in the small things
-                and staying grounded while keeping active at the gym.
+                I&apos;m a curious and driven computer science graduate, always learning and
+                building. I love solving problems, making cool digital stuff, and working with
+                people who care about what they&apos;re doing. Outside of tech, I enjoy finding joy
+                in the small things and staying grounded while keeping active at the gym.
               </p>
               <div className={sectionStyles.visual}>
-                <img src="https://images.unsplash.com/photo-1534614971-6be99a7a3ffd?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                <Image src="/env/nx.png" alt={''} height={100} width={100} />
               </div>
             </section>
 
@@ -112,10 +113,10 @@ export default function AboutPage() {
                 Someone who codes, designs, and thinks across different layers of technology.
                 <br />
                 <br />
-                A developer, problem-solver, and creative thinker. I’ve worked across web, app, and
-                game development — from React dashboards to Unity mobile games. I'm comfortable
-                navigating both design tools and databases, and I love working at the intersection
-                of tech and people.
+                A developer, problem-solver, and creative thinker. I&apos;ve worked across web, app,
+                and game development — from React dashboards to Unity mobile games. I&apos;m
+                comfortable navigating both design tools and databases, and I love working at the
+                intersection of tech and people.
                 <br />
                 <br />
                 My toolbox includes JavaScript, Python, Flutter, Firebase, and even some
@@ -132,7 +133,7 @@ export default function AboutPage() {
                 Because I like solving real-world problems with code.
                 <br />
                 <br />
-                Tech gives me the tools to make things better — whether that’s simplifying a
+                Tech gives me the tools to make things better — whether that&apos;s simplifying a
                 workflow, building tools for creators, or connecting people with resources. I want
                 to keep pushing myself, collaborating with sharp teams, and contributing to tech
                 that actually helps.

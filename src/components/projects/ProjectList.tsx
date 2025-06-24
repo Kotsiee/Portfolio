@@ -4,6 +4,8 @@ import styles from './ProjectList.module.css';
 import ProjectItem from './ProjectItem';
 import useImageHover from '@/hooks/useImageHover';
 import useProjectReveal from '@/hooks/useProjectReveal';
+import Image from 'next/image';
+import { IProjects } from '@/data/projects';
 
 export default function ProjectList({
   title,
@@ -11,7 +13,7 @@ export default function ProjectList({
   future = false,
 }: {
   title: string;
-  projects: any[];
+  projects: IProjects[];
   future?: boolean;
 }) {
   const { imgRef, handleMouseEnter, handleMouseLeave } = useImageHover();
@@ -20,7 +22,14 @@ export default function ProjectList({
   return (
     <section>
       <h2>{title}</h2>
-      <img className={styles.projectImg} ref={imgRef} />
+      <Image
+        className={styles.projectImg}
+        ref={imgRef}
+        src={'/env/nx.png'}
+        alt={''}
+        height={200}
+        width={300}
+      />
       <div className={styles.projectsList}>
         {projects.map((project, i) => (
           <ProjectItem

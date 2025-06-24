@@ -6,7 +6,7 @@ import { Mesh, ShaderMaterial, Vector2 } from 'three';
 import vs from '../../shaders/background.vertex.glsl';
 import fs from '../../shaders/background.fragment.glsl';
 
-export function Plane(props: any) {
+export function Plane() {
   const meshRef = useRef<Mesh>(null);
   const matRef = useRef<ShaderMaterial>(null);
   const smoothedPointer = useRef(new Vector2(0.5, 0.5));
@@ -48,7 +48,7 @@ export function Plane(props: any) {
   });
 
   return (
-    <mesh {...props} ref={meshRef}>
+    <mesh ref={meshRef}>
       <planeGeometry args={[viewport.width, viewport.height]} />
       <shaderMaterial
         ref={matRef}
@@ -69,7 +69,7 @@ export function Plane(props: any) {
   );
 }
 
-export default function Background(props: any) {
+export default function Background() {
   return (
     <Canvas frameloop="always" orthographic camera={{ zoom: 100, position: [0, 0, 5] }}>
       <Plane />

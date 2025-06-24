@@ -1,6 +1,5 @@
 'use client';
 
-import Navigation from '@/components/navigation/navigation';
 import ProjectList from '@/components/projects/ProjectList';
 import styles from './page.module.css';
 

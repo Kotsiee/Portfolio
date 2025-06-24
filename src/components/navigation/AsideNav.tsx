@@ -14,6 +14,20 @@ export default function AsideNav({ items }: { items: { id: string; label: string
     const aside = asideRef.current;
     if (!aside) return;
 
+    const setActiveLink = (id: string) => {
+      const navLinks = aside.querySelectorAll(`.${styles.navLink}`);
+      navLinks.forEach((link) => {
+        const linkHref = (link as HTMLAnchorElement).getAttribute('href');
+        if (linkHref === `#${id}`) {
+          link.classList.add(styles.active);
+          link.parentElement?.classList.add(styles.active); // for <li>
+        } else {
+          link.classList.remove(styles.active);
+          link.parentElement?.classList.remove(styles.active);
+        }
+      });
+    };
+
     // Initial setup
     gsap.set(aside, {
       position: 'fixed',
@@ -54,20 +68,6 @@ export default function AsideNav({ items }: { items: { id: string; label: string
         },
       });
     });
-
-    const setActiveLink = (id: string) => {
-      const navLinks = aside.querySelectorAll(`.${styles.navLink}`);
-      navLinks.forEach((link) => {
-        const linkHref = (link as HTMLAnchorElement).getAttribute('href');
-        if (linkHref === `#${id}`) {
-          link.classList.add(styles.active);
-          link.parentElement?.classList.add(styles.active); // for <li>
-        } else {
-          link.classList.remove(styles.active);
-          link.parentElement?.classList.remove(styles.active);
-        }
-      });
-    };
 
     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   }, [items]);

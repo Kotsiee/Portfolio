@@ -2,10 +2,8 @@
 
 import React, { useMemo, useRef, useState } from 'react';
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
-import { OrbitControls, Html } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import {
-  Group,
-  Object3DEventMap,
   Points,
   Quaternion,
   RawShaderMaterial,
@@ -18,7 +16,6 @@ import vs from '../../shaders/ball.vertex.glsl';
 import fs from '../../shaders/ball.fragment.glsl';
 
 type Badge = {
-  label: string;
   logo: string;
   url: string;
   offset: number;
@@ -27,42 +24,36 @@ type Badge = {
 
 const badges: Badge[] = [
   {
-    label: 'FIGMA',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
     url: 'https://figma.com',
     offset: 0,
     color: '#000000',
   },
   {
-    label: 'REACT',
     logo: 'https://static-00.iconduck.com/assets.00/react-original-wordmark-icon-421x512-6l3sw2sy.png',
     url: 'https://react.dev',
     offset: 2,
     color: '#61dafb',
   },
   {
-    label: 'C#',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/910px-Logo_C_sharp.svg.png',
     url: 'https://learn.microsoft.com/en-us/dotnet/csharp/',
     offset: 4,
     color: '#512bd4',
   },
   {
-    label: 'TypeScript',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png',
     url: 'https://www.typescriptlang.org',
     offset: 6,
     color: '#512bd4',
   },
   {
-    label: 'Python',
     logo: 'https://images.icon-icons.com/2699/PNG/512/python_logo_icon_168886.png',
     url: 'https://www.python.org',
     offset: 8,
     color: '#512bd4',
   },
   {
-    label: 'Blender',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Blender_logo_no_text.svg/2503px-Blender_logo_no_text.svg.png',
     url: 'https://www.blender.org',
     offset: 10,
@@ -75,7 +66,7 @@ type OrbiterProps = Badge & {
   speed?: number;
 };
 
-function Orbiter({ label, logo, url, radius = 2, speed = 0.25, offset = 0 }: OrbiterProps) {
+function Orbiter({ logo, url, radius = 2, speed = 0.25, offset = 0 }: OrbiterProps) {
   const ref = useRef<Sprite>(null!);
   const texture = useLoader(TextureLoader, logo);
   const [hovered, setHovered] = useState(false);

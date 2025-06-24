@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonHTMLAttributes, Dispatch, SetStateAction, useRef, useState } from 'react';
+import { ButtonHTMLAttributes, Dispatch, SetStateAction, useRef } from 'react';
 import gsap from 'gsap';
 
 const MenuToggle: React.FC<

@@ -1,17 +1,15 @@
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import gsap from 'gsap';
 
 interface TLinkProps extends LinkProps {
   children: React.ReactNode;
   className?: string;
 
   exit?: gsap.core.Tween | gsap.core.Timeline;
-  enter?: gsap.core.Tween | gsap.core.Timeline;
 }
 
-export const TLink = ({ href, className, children, exit, enter, ...props }: TLinkProps) => {
+export const TLink = ({ href, className, children, exit, ...props }: TLinkProps) => {
   const router = useRouter();
 
   const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -19,8 +17,6 @@ export const TLink = ({ href, className, children, exit, enter, ...props }: TLin
 
     e.preventDefault();
 
-    // Run exit animation
-    // Sleep for x time
     if (exit) {
       await new Promise((resolve) => {
         exit.eventCallback('onComplete', resolve);
